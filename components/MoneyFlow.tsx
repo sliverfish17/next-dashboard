@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { MoneyTypes } from 'types/common';
+import arrow from 'assets/arrow.svg';
 
 type MoneyFlowProps = {
   type: MoneyTypes;
@@ -34,7 +35,7 @@ export function MoneyFlow({ type, amount, overall }: MoneyFlowProps) {
           alt="Arrow"
           width={18}
           height={18}
-          src="/arrow.svg"
+          src={arrow}
         />
       </div>
       <div className="mr-8">
@@ -45,7 +46,7 @@ export function MoneyFlow({ type, amount, overall }: MoneyFlowProps) {
         </h2>
         <h3 className="text-2xl font-bold text-white">
           $
-          {amount}
+          {Math.abs(amount)}
         </h3>
       </div>
       <div

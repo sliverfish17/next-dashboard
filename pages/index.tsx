@@ -4,6 +4,10 @@ import Image from 'next/image';
 import { DM_Sans } from 'next/font/google';
 import { MoneyFlow } from 'components/MoneyFlow';
 import { MoneyTypes } from 'types/common';
+import { Transactions } from 'components/Transactions';
+import settings from 'assets/settings.svg'
+import user from 'assets/user.svg'
+import icon from 'assets/icon.png'
 
 const SANS = DM_Sans({ weight: ['400', '500', '700'], subsets: ['latin'] });
 
@@ -28,9 +32,6 @@ export default function Home({
     0,
   );
 
-  console.log(transactions);
-
-
   return (
     <>
       <Head>
@@ -46,7 +47,7 @@ export default function Home({
             width={50}
             height={50}
             alt="Logo"
-            src="/icon.png"
+            src={icon}
           />
           <span className="mb-9 block h-[1px] w-full bg-black opacity-20" />
           <Image
@@ -54,7 +55,7 @@ export default function Home({
             alt="User"
             width={26}
             height={26}
-            src="/user.svg"
+            src={user}
           />
 
           <Image
@@ -62,7 +63,7 @@ export default function Home({
             alt="User"
             width={26}
             height={26}
-            src="/settings.svg"
+            src={settings}
           />
         </aside>
         <main className="pt-10 pl-7">
@@ -81,7 +82,9 @@ export default function Home({
               type={MoneyTypes.Outcome}
             />
           </div>
-          <div className="flex" />
+          <div className="flex">
+            <Transactions />
+          </div>
         </main>
       </div>
     </>
