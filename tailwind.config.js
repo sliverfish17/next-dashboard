@@ -11,7 +11,11 @@ module.exports = {
         'purple': '#1D1D41',
         'light-grey': '#AEABD8',
         'dark-grey': '#8C89B4',
-        'main': '#F1F1F1'
+        'main': '#F1F1F1',
+        'cyan': '#64CFF6',
+        'liliac': '#6359E9',
+        'success': '#02B15A',
+        'failure': '#EB001B'
       },
     },
   },

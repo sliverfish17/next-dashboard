@@ -1,0 +1,8 @@
+{
+    "endOfLine": "crlf",
+    "trailingComa": "all",
+    "semi": true,
+    "singleQuote": true,
+    "useTabs": false,
+    "tabWidth": 2
+}
