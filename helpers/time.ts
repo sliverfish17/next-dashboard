@@ -3,11 +3,11 @@ const US_OPTIONS = {
   year: 'numeric',
   month: 'short',
   day: 'numeric',
-};
+} as const;
 
 const MONTH_OPTIONS = {
   month: 'short',
-};
+} as const;
 
 export const transformDateUS = (date: Date) =>
   date.toLocaleDateString('en-US', US_OPTIONS);

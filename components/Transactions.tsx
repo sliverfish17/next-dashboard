@@ -15,8 +15,8 @@ type TTransactions = {
 export const Transactions = ({ transactions, className }: TTransactions) => {
   const [chosenDate, setChosenDate] = useState<number[] | Date[] | null>([new Date(0), new Date(0)]);
 
-  const firstDate = chosenDate[0] ?? 0;
-  const secondDate = chosenDate[1] ?? 0;
+  const firstDate = chosenDate ? chosenDate[0] : 0;
+  const secondDate = chosenDate ? chosenDate[1] : 0;
 
   const filteredTransactions = useMemo(() => {
     return transactions.filter((transaction) => {
@@ -28,13 +28,13 @@ export const Transactions = ({ transactions, className }: TTransactions) => {
 
   return (
     <div className={`relative ${className}`}>
-      <div className='bg-purple rounded-2xl p-6 w-[688px] h-full'>
-        <div className='flex mb-9 h-fit'>
-          <h2 className='text-xl mr-10 text-white'>Transactions</h2>
+      <div className='h-full w-[688px] rounded-2xl bg-purple p-6'>
+        <div className='mb-9 flex h-fit'>
+          <h2 className='mr-10 text-xl text-white'>Transactions</h2>
           <Search className='mr-4' />
           <DatePicker setChosenDate={setChosenDate} />
         </div>
-        <div className='flex text-light-grey text-sm mb-8 justify-around'>
+        <div className='mb-8 flex justify-around text-sm text-light-grey'>
           <h3>Name</h3>
           <h3>Date</h3>
           <h3>Amount</h3>

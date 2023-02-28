@@ -7,7 +7,7 @@ export const Chart = ({ data }: { data: TTransaction[] }) => {
 
 
     return (
-        <ResponsiveContainer className='bg-purple min-h-[400px]' width="100%" height="100%">
+        <ResponsiveContainer className='min-h-[400px] bg-purple' width="100%" height="100%">
             <BarChart
                 data={data}
             >

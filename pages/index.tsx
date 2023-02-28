@@ -79,8 +79,8 @@ export default function Home({
           </div>
           <div className="flex">
             <Transactions className='mr-20' transactions={transactions} />
-            <div className='w-[668px] rounded-3xl bg-purple p-4 h-full min-h-[428px]'>
-              <div className='flex mb-10 justify-between'>
+            <div className='h-full min-h-[428px] w-[668px] rounded-3xl bg-purple p-4'>
+              <div className='mb-10 flex justify-between'>
                 <h3 className='text-2xl text-white'>Analytics</h3>
                 <select>
                   <option selected>2018</option>

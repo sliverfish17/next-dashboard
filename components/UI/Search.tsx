@@ -9,7 +9,7 @@ type SearchProps = {
 export const Search = ({ className }: SearchProps) => {
     return (
         <label className={`relative ${className}`}>
-            <input placeholder='Search for anything....' className='px-2 text-white outline-none h-10 rounded-lg w-[200px] bg-eggplant py-2' type='text' />
+            <input placeholder='Search for anything....' className='h-10 w-[200px] rounded-lg bg-eggplant p-2 text-white outline-none' type='text' />
             <Image className='absolute top-2 right-3' alt="Search" width={15} height={27} src={searchIcon} />
         </label>
     )
