@@ -5,7 +5,7 @@ import calendar from "assets/calendar.png"
 import dropdown from "assets/dropdown.svg"
 import { isoDateToUnix } from '@helpers/time';
 
-const DatePick = ({ setChosenDate }: { setChosenDate: React.Dispatch<React.SetStateAction<number[] | null>> }) => {
+const DatePick = ({ setChosenDate }: { setChosenDate: React.Dispatch<React.SetStateAction<number[] | Date[] | null>> }) => {
 
     const [startDate, setStartDate] = useState(new Date('2018-01-01'));
     const [endDate, setEndDate] = useState(new Date('2018-02-01'));

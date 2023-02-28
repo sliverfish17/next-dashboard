@@ -1,12 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
-import { MoneyTypes } from 'types/common';
+import { TMoney } from 'types/common';
 import arrow from 'assets/arrow.svg';
 
 type MoneyFlowProps = {
-  type: MoneyTypes;
+  type: TMoney;
   amount: number;
   overall: number;
+  className?: string;
 };
 
 const CARD_STYLES = [
@@ -18,7 +19,7 @@ const CARD_STYLES = [
   },
 ];
 
-export function MoneyFlow({ type, amount, overall }: MoneyFlowProps) {
+export function MoneyFlow({ type, amount, overall, className }: MoneyFlowProps) {
   const {
     typeColor, arrowPosition, percentColor, label,
   } = CARD_STYLES[type];
@@ -26,7 +27,7 @@ export function MoneyFlow({ type, amount, overall }: MoneyFlowProps) {
   const percent = overall * amount / 100;
 
   return (
-    <div className="flex h-32 w-[320px] items-center rounded-[20px] bg-purple px-6 py-9">
+    <div className={`flex h-32 w-[320px] items-center rounded-[20px] bg-purple px-6 py-9 ${className}`}>
       <div
         className={`mr-6 flex h-11 w-11 items-center justify-center rounded-lg ${typeColor}`}
       >
@@ -40,8 +41,7 @@ export function MoneyFlow({ type, amount, overall }: MoneyFlowProps) {
       </div>
       <div className="mr-8">
         <h2 className="text-sm text-dark-grey">
-          Total
-          {' '}
+          Total&nbsp;
           {label}
         </h2>
         <h3 className="text-2xl font-bold text-white">

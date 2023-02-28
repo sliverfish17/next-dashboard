@@ -1,9 +1,9 @@
-export enum MoneyTypes {
+export enum TMoney {
   'Income',
   'Outcome',
 }
 
-export type TransactionTypes = {
+export type TTransaction = {
   amount: string;
   category: string;
   creditorName: string;
@@ -11,3 +11,4 @@ export type TransactionTypes = {
   date: string;
   id: string;
 };
+
