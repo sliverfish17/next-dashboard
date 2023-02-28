@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { DM_Sans } from 'next/font/google';
 import { MoneyFlow } from 'components/MoneyFlow';
-import { MoneyTypes } from 'types/common';
+import { MoneyTypes, TransactionTypes } from 'types/common';
 import { Transactions } from 'components/Transactions';
 import settings from 'assets/settings.svg'
 import user from 'assets/user.svg'
@@ -12,14 +12,7 @@ import icon from 'assets/icon.png'
 const SANS = DM_Sans({ weight: ['400', '500', '700'], subsets: ['latin'] });
 
 type Transactions = {
-  transactions: {
-    amount: string;
-    category: string;
-    creditorName: string;
-    currency: string;
-    date: string;
-    id: string;
-  }[];
+  transactions: TransactionTypes[];
 };
 
 export default function Home({
@@ -83,7 +76,7 @@ export default function Home({
             />
           </div>
           <div className="flex">
-            <Transactions />
+            <Transactions transactions={transactions} />
           </div>
         </main>
       </div>
